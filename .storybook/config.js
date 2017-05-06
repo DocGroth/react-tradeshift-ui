@@ -6,10 +6,6 @@ import infoAddon from '@kadira/react-storybook-addon-info';
 setAddon(infoAddon);
 addDecorator(withKnobs);
 
-function loadStories() {
-	require('../src/stories');
-}
-
 setOptions({
 	name: 'React-tradeshift-ui',
 	url: 'https://ui.tradeshift.com',
@@ -21,4 +17,6 @@ setOptions({
 	sortStoriesByKind: false
 });
 
-configure(loadStories, module);
+configure(function loadStories() {
+	require('../src/stories');
+}, module);
