@@ -2,7 +2,7 @@
   "name": "react-tradeshift-ui",
   "version": "0.0.0-development",
   "main": "components/index.js",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "build": "build-storybook",
     "precommit": "lint-staged",
