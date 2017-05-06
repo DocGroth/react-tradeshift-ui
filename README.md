@@ -37,4 +37,4 @@ Releases are handled automatically by Travis-CI via [semantic-release](https://g
 and [commitizen](http://commitizen.github.io/cz-cli/) commit message conventions.
 
 ## License
-MIT
+ISC. Copyright (c) 2017, Tradeshift.

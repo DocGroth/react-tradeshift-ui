@@ -2,7 +2,7 @@
   "name": "react-tradeshift-ui",
   "version": "0.0.0-development",
   "main": "components/index.js",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
