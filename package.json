@@ -1,15 +1,21 @@
 {
   "name": "react-tradeshift-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "components/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build": "build-storybook",
+    "precommit": "lint-staged",
+    "start": "start-storybook -p 9009",
+    "lint": "eslint src",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --color",
+      "prettier --write --use-tabs --single-quote --color",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.4.0",
@@ -19,11 +25,20 @@
     "@types/react": "^15.0.23",
     "@types/react-dom": "^15.5.0",
     "@types/react-portal": "^3.0.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1",
+    "prettier": "^1.3.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-scripts": "^0.9.5"
   },
   "dependencies": {
+    "prop-types": "^15.5.8",
     "react-portal": "^3.1.0"
   },
   "peerDependencies": {

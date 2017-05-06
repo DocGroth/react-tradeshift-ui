@@ -1,5 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Portal from 'react-portal';
+
 const noop = () => {};
 
 class Aside extends Component {
@@ -13,48 +15,28 @@ class Aside extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		this.isOpen = nextProps.isOpen;
-		if (!this.ref || !this.ref.spirit) {
-			const ref = this.ref || {};
-			console.log(this.ref);
-			console.log(ref.spirit);
-			return;
-		}
-
-		if (this.props.isOpen !== nextProps.isOpen) {
-			if (nextProps.isOpen === true) {
-				this.ref.spirit.open();
-			} else if (nextProps.isOpen === false) {
-				this.ref.spirit.close();
-			}
-		}
 	}
 
 	onRef(ref) {
-		console.log('onRef');
 		this.ref = ref;
-
-		if (ref) {
-			if (!ref.spirit) {
-				console.log('waiting spirit');
-				return setTimeout(() => this.onRef(ref), 1);
-			}
-			ref.spirit.onclose = e => {
-				console.log(!this.isOpen)
+		if (this.ref && this.ref.spirit) {
+			this.ref.spirit.onclose = e => {
 				this.props.onClose(e);
-				return !this.isOpen;
+				return typeof this.open !== 'undefined' ? !this.isOpen : undefined;
 			};
-			ref.spirit.onclosed = this.props.onClosed;
-			ref.spirit.onopen = e => {
-				console.log(this.isOpen)
+			this.ref.spirit.onclosed = this.props.onClosed;
+			this.ref.spirit.onopen = e => {
 				this.props.onOpen(e);
 				return this.isOpen;
 			};
-			ref.spirit.onopened = this.props.onOpened;
+			this.ref.spirit.onopened = this.props.onOpened;
 		}
 	}
 
 	render() {
-		const busyMessage = this.props.isLoading ? this.props.loadingMessage : undefined;
+		const busyMessage = this.props.isLoading
+			? this.props.loadingMessage
+			: undefined;
 		const asideProps = {
 			'data-ts.title': this.props.title,
 			'data-ts.open': this.props.isOpen,
@@ -71,8 +53,12 @@ class Aside extends Component {
 		);
 	}
 }
+
 Aside.propTypes = {
-	children: PropTypes.any,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
 	isLoading: PropTypes.bool,
 	isOpen: PropTypes.bool,
 	loadingMessage: PropTypes.string,
@@ -82,12 +68,17 @@ Aside.propTypes = {
 	onOpened: PropTypes.func,
 	title: PropTypes.string
 };
+
 Aside.defaultProps = {
+	children: null,
+	isLoading: false,
+	isOpen: undefined,
 	loadingMessage: 'Loading...',
 	onClose: noop,
 	onClosed: noop,
 	onOpen: noop,
-	onOpened: noop
+	onOpened: noop,
+	title: 'Aside'
 };
 
 export default Aside;
