@@ -8,7 +8,7 @@ node_js:
   - '7'
 before_script:
   - npm prune
-scripts:
+script:
   - npm test -- --coverage
 after_success:
   - npm run report-coverage
