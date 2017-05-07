@@ -9,7 +9,7 @@ node_js:
 before_script:
   - npm prune
 script:
-  - npm test -- --coverage
+  - npm test -- --coverage --collectCoverageFrom=src/components/**/*.js
 after_success:
   - npm run report-coverage
   - npm run semantic-release
