@@ -6,10 +6,12 @@ notifications:
   email: false
 node_js:
   - '7'
-  - '6'
 before_script:
   - npm prune
+script:
+  - npm test -- --coverage
 after_success:
+  - npm run report-coverage
   - npm run semantic-release
 branches:
   except:

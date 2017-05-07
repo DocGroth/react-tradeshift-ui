@@ -8,6 +8,8 @@ class Aside extends Component {
 	constructor(props) {
 		super(props);
 		this.onRef = this.onRef.bind(this);
+		this.onOpen = this.onOpen.bind(this);
+		this.onClose = this.onClose.bind(this);
 
 		// Sync open flag for onclose / onopen callbacks
 		this.isOpen = props.isOpen;
@@ -17,18 +19,22 @@ class Aside extends Component {
 		this.isOpen = nextProps.isOpen;
 	}
 
+	onClose(e) {
+		this.props.onClose(e);
+		return typeof this.isOpen !== 'undefined' ? !this.isOpen : undefined;
+	}
+
+	onOpen(e) {
+		this.props.onOpen(e);
+		return this.isOpen;
+	}
+
 	onRef(ref) {
 		this.ref = ref;
 		if (this.ref && this.ref.spirit) {
-			this.ref.spirit.onclose = e => {
-				this.props.onClose(e);
-				return typeof this.open !== 'undefined' ? !this.isOpen : undefined;
-			};
+			this.ref.spirit.onclose = this.onClose;
 			this.ref.spirit.onclosed = this.props.onClosed;
-			this.ref.spirit.onopen = e => {
-				this.props.onOpen(e);
-				return this.isOpen;
-			};
+			this.ref.spirit.onopen = this.onOpen;
 			this.ref.spirit.onopened = this.props.onOpened;
 		}
 	}

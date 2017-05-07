@@ -1,0 +1,145 @@
+exports[`Aside renders with default props 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <Portal
+    isOpened={true}
+    onClose={[Function]}
+    onOpen={[Function]}
+    onUpdate={[Function]}>
+    <aside
+        data-ts="Aside"
+        data-ts.busy={undefined}
+        data-ts.open={undefined}
+        data-ts.title="Aside">
+        <div
+            data-ts="Panel" />
+    </aside>
+</Portal>,
+  "nodes": Array [
+    <Portal
+      isOpened={true}
+      onClose={[Function]}
+      onOpen={[Function]}
+      onUpdate={[Function]}>
+      <aside
+            data-ts="Aside"
+            data-ts.busy={undefined}
+            data-ts.open={undefined}
+            data-ts.title="Aside">
+            <div
+                  data-ts="Panel" />
+      </aside>
+</Portal>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Aside
+        isLoading={false}
+        isOpen={undefined}
+        loadingMessage="Loading..."
+        onClose={[Function]}
+        onClosed={[Function]}
+        onOpen={[Function]}
+        onOpened={[Function]}
+        title="Aside" />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Aside {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "isOpen": undefined,
+        "onClose": [Function],
+        "onOpen": [Function],
+        "onRef": [Function],
+        "props": Object {
+          "children": null,
+          "isLoading": false,
+          "isOpen": undefined,
+          "loadingMessage": "Loading...",
+          "onClose": [Function],
+          "onClosed": [Function],
+          "onOpen": [Function],
+          "onOpened": [Function],
+          "title": "Aside",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <Portal
+          isOpened={true}
+          onClose={[Function]}
+          onOpen={[Function]}
+          onUpdate={[Function]}>
+          <aside
+                    data-ts="Aside"
+                    data-ts.busy={undefined}
+                    data-ts.open={undefined}
+                    data-ts.title="Aside">
+                    <div
+                              data-ts="Panel" />
+          </aside>
+</Portal>,
+        "_debugID": 2,
+        "_renderedOutput": <Portal
+          isOpened={true}
+          onClose={[Function]}
+          onOpen={[Function]}
+          onUpdate={[Function]}>
+          <aside
+                    data-ts="Aside"
+                    data-ts.busy={undefined}
+                    data-ts.open={undefined}
+                    data-ts.title="Aside">
+                    <div
+                              data-ts="Panel" />
+          </aside>
+</Portal>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Aside
+    isLoading={false}
+    isOpen={undefined}
+    loadingMessage="Loading..."
+    onClose={[Function]}
+    onClosed={[Function]}
+    onOpen={[Function]}
+    onOpened={[Function]}
+    title="Aside" />,
+}
+`;
