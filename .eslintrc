@@ -1,19 +1,19 @@
 {
 	"extends": "airbnb",
+	"plugins": [
+		"jest"
+	],
+	"env": {
+		"jest/globals": true
+	},
 	"rules": {
-		"no-tabs": "off",
-		"react/jsx-filename-extension": "off",
-		"react/jsx-indent": [
+		"arrow-parens": [
 			"error",
-			"tab"
+			"as-needed"
 		],
-		"react/jsx-indent-props": [
+		"comma-dangle": [
 			"error",
-			"tab"
-		],
-		"indent": [
-			"error",
-			"tab"
+			"never"
 		],
 		"import/no-extraneous-dependencies": [
 			"error",
@@ -21,13 +21,23 @@
 				"devDependencies": true
 			}
 		],
-		"comma-dangle": [
+		"indent": [
 			"error",
-			"never"
+			"tab"
 		],
-		"arrow-parens": [
+		"jest/no-disabled-tests": "warn",
+		"jest/no-focused-tests": "error",
+		"jest/no-identical-title": "error",
+		"jest/valid-expect": "error",
+		"no-tabs": "off",
+		"react/jsx-filename-extension": "off",
+		"react/jsx-indent-props": [
 			"error",
-			"as-needed"
+			"tab"
+		],
+		"react/jsx-indent": [
+			"error",
+			"tab"
 		]
 	}
 }
